@@ -1,0 +1,231 @@
+$font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+*{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: $font;
+}
+body{
+    background-color: #eee;
+}
+.navbar{
+    #my-nav{
+        .navbar-nav{
+            .nav-item{
+                text-transform: capitalize;
+                .log::after{
+                    content: '\f011';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 800;
+                    color: black;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+.container{
+    .row{
+        .title{
+            margin-top: 5em;
+            position: relative;
+        }
+        .form{
+            margin: 150px auto 40px auto;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.4);
+            padding: 50px;
+            h5{
+                font-size: 30px;
+            }
+            h6{
+                font-size: 20px;
+            }
+            .form-group{
+                position: relative;
+                input{
+                    padding: 30px;
+                    background-color: #eee;
+                    border-radius: 5px;
+                    color: black;
+                    font-weight: bold;
+                }
+                input:focus{
+                    outline: none;
+                    border-color: #eee;
+                    box-shadow: none;
+                }
+                input[type="password"]::placeholder , input[type="text"]::placeholder{
+                    font-weight: bold;
+                    text-transform: capitalize;
+                }
+            }
+
+        }
+
+    }
+}
+//home page
+.container{
+    .row{
+        flex-direction: column;
+        .wel-msg{
+            margin:100px auto 0 auto;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            h5{
+                font-size: xx-large;
+            }
+        }
+         select{
+                background-color: #EEe;
+            
+        }
+        select:focus{
+            border: 2px solid #333;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}
+
+.text-red{
+    text-transform: capitalize;
+    color: red;
+}
+.container{
+    .row{
+        .chat-container{
+            background-color: #fff;
+            border:1px solid #000;
+            width: 500px !important;
+            height: 500px;
+            border-radius: 5px;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            .form-group{
+                width: 80%;
+            }
+            .chat-action{
+                position: absolute;
+                bottom: -16px;
+                width: 100%;
+                .row{
+                    margin-right:  unset !important;
+                    margin-left: unset !important;
+                }
+                .buttons{
+                    position: absolute;
+                    right: 55px;
+                    top: 0px;
+                    input{
+                        position: absolute;
+                        width: 49px;
+                        opacity: 0;
+                    }
+                    button{
+                        width: 49px;
+                         height: 39px;
+                    }
+                }
+                .button{
+                    position: absolute;
+                    right: -1px;
+                    top: 0px;
+                }
+            }
+           .timeline{
+                max-height: 400px;
+                overflow: auto;
+               .sender{
+                   display: block;
+                   position: relative;
+                   width: 250px;
+                   left: 20px;
+                   top: 10px;
+                   background-color: orange;
+                   padding: 5px;
+                   color: white;
+                   border-radius: 4px;
+                   margin-bottom: 20px;
+                   img{
+                       width: 150px;
+                       height: 150px;
+                   }
+                }
+                .reciever{
+                    position: relative;
+                    margin-left: 250px;
+                    display: block;
+                    right: 50px;
+                    width: 250px;
+                    top: 20px;
+                    background-color: grey;
+                    padding: 5px;
+                    color: white;
+                    border-radius: 4px;
+                    margin-bottom: 20px;
+                    img{
+                        width: 150px;
+                       height: 150px;
+                    }
+                }
+            }
+            .chat-header{
+                background-color: #eee;
+                width: 100%;
+                padding: 5px;
+                h6{
+                    font-size: 20px;
+                    padding-left: 1rem;
+                }
+                span{
+                    font-size: 15px;
+                    padding-left: 1.5rem;
+                    color: green;
+                }
+            }
+        }
+    }
+}
+.push-notification{
+    width: 200px;
+    height: 150px;
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.4);
+    top: 50px;
+    right: 10px;
+    z-index: 99999;
+    position: fixed;
+    right: -205px;
+    span{
+        text-align: center;
+        display: block;
+        text-transform: capitalize;
+        position: absolute;
+        left: 20px;
+        top: 60px;
+    }
+    .fa-bell{
+        text-align: center;
+        display: block;
+        margin-top: 25px;
+    }
+}
+
+// @media(min-width:991px){
+//     .container{
+//         .row{
+//             .chat-container{
+//                 .chat-action{
+//                     width: 400px !important;
+//                 }
+//             }
+//         }
+//     }
+// }
