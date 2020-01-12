@@ -129,12 +129,13 @@ class AppAuth extends Controller
 
         $Auth_id = $request->id;
 
-        $users = user::where([['id'  , '!=', $Auth_id] , ['status' , 1]])->pluck('username');
+        $users = user::where([['id'  , '!=', $Auth_id] , ['status' , 1]])->get();
 
-        return $users;
+        return view('users' , compact('users'));
 
 
         
     }
+
 
 }

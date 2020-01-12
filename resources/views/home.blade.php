@@ -11,21 +11,21 @@
                 welcome , {{ auth()->user()->username}} choose a user to begin chatting have fun!!!
             </h5>
         </div>
-        <div class="select-user col-lg-12  ">
-            <form action="/chat" method="post">
-                @csrf
-                <div class="form-group col-lg-4 text-center mx-auto my-5">
-                    <select name="username" class="custom-select">
-                        <option selected>choose a user</option>    
-                        @foreach($users as $user)
-                    <option value="{{$user->username}}">
-                        {{$user->username}}
-                    </option>
-                        @endforeach
-                    </select>    
-                </div>    
-                <button class="btn-dark btn-lg d-block m-auto">start chat</button>
-            </form>
+        <div class="select-user col-lg-12 ">
+            <div class="loader">
+                <img src="" alt="">
+            </div>
+            <table class="table table-light striped d-none bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th>#</th>
+                        <th>username</th>
+                        <th>action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
@@ -38,6 +38,17 @@
 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
 <script>
 $(function(){
+
+    axios.post('{{route("activeUsers")}}' , {
+        id: '{{Auth()->user()->id}}'
+    })
+    .then((res) => {
+        $('.select-user .loader').hide();
+        $('table tbody').html(res.data);
+        $('table').removeClass('d-none');
+    })
+    .catch(err => console.error(err));
+
 
     //change in user status
     Pusher.logToConsole = true;
@@ -57,10 +68,7 @@ $(function(){
         id
     })
     .then((response) => {
-        $('.custom-select').html('');
-        response.data.forEach(element => {
-           $('.custom-select').append(`<option value="${element}">${element}</option>`);
-       });
+        $('table tbody').html(response.data);
     })
     .catch(err => console.error(err));
     });

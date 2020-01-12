@@ -91,7 +91,7 @@
             </div>
             <div class="chat-action">
                 <div class="row">
-                    <form action="" method="post" class="data" enctype="multipart/form-data">
+                    <form  method="post" class="data" enctype="multipart/form-data">
                         @csrf
                     <input type="hidden" name="token" value="{{$channel_token}}">
                         <div class="form-group">
@@ -265,7 +265,7 @@ $('.data').submit(function(e){
     
             right: '10px'
           },1500 , function(){
-            $(this).animate({
+            $(this).delay(2000).animate({
             right:'-205px'
         })
         
