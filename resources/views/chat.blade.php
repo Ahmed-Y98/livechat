@@ -19,22 +19,74 @@
                 @if(auth()->user()->id == $message->sender)
                     <div class="sender">
                         @if($message->photo != 'no photo')
-                     <img src="{{$message->photo}}" alt="">
-                        @endif
-                       <p class="d-block">
-                        {{$message->body}}  
-                    </p> 
+                   @php
+                       $ext = explode('.' , $message->photo);
+                   @endphp
+
+                    @if($ext[1] == 'pdf')
+                        <a href="{{$message->photo}}" target="blank">
+                            <i class="fas fa-file-pdf"></i>
+                        </a>
+                    @elseif($ext[1] == 'docx')
+
+                    <a href="{{$message->photo}}">
+                        <i class="fas fa-file-word"></i>
+                    </a>
+
+                    @else
+
+                        <img src="{{$message->photo}}">
+
+                    @endif
+
+                    @endif
+
+                    @if($message->body != 'no msg')
+                            <p class=" d-block">
+                                {{$message->body}}  
+                            </p> 
+                     @endif
+
                     </div>
+
                 @else
                     <div class="reciever">
                         @if($message->photo != 'no photo')
-                        <img src="{{$message->photo}}" alt="">
-                           @endif
-                        <p class=" d-block">
-                            {{$message->body}}  
-                        </p> 
+                        @php
+                            $ext = explode('.' , $message->photo);
+                        @endphp
+
+                         @if($ext[1] == 'pdf')
+                             <a href="{{$message->photo}}" target="blank">
+                                 <i class="fas fa-file-pdf"></i>
+                             </a>
+
+                         @elseif($ext[1] == 'docx')
+
+                         <a href="{{$message->photo}}">
+                             <i class="fas fa-file-word"></i>
+                         </a>
+
+                         @else
+
+                             <img src="{{$message->photo}}">
+
+                         @endif
+
+                         @endif
+
+                         @if($message->body != 'no msg')
+
+                                <p class=" d-block">
+                                    {{$message->body}}  
+                                </p> 
+
+                        @endif
+
                     </div>
+
                 @endif
+
                 @endforeach
             </div>
             <div class="chat-action">
@@ -107,9 +159,24 @@ $('.data').submit(function(e){
     channel.bind('online-user', function(data) {
             let photo;
             let message;
+            var ext = data.photo.split('.')[1];
         if(data.sender == "{{auth()->user()->id}}"){
             if(data.photo != 'no photo'){
-                photo =  `<img src="${data.photo}" >`;
+                if(ext == 'pdf'){
+                   
+                    photo =  `<a href="${data.photo}" target="blank">
+                                 <i class="fas fa-file-pdf"></i>
+                             </a>`;
+
+                }else if(ext == 'docx'){
+
+                    photo =  `<a href="${data.photo}" target="blank">
+                                 <i class="fas fa-file-word"></i>
+                             </a>`;
+
+                }else{
+                    photo =  `<img src="${data.photo}" >`;
+                }
             }else{
                 photo = '';
             }
@@ -125,7 +192,21 @@ $('.data').submit(function(e){
                  $('.timeline').append(html);
         }else{
             if(data.photo != 'no photo'){
-                photo = `<img src="${data.photo}" >`;
+                if(ext == 'pdf'){
+                   
+                   photo =  `<a href="${data.photo}" target="blank">
+                                <i class="fas fa-file-pdf"></i>
+                            </a>`;
+
+               }else if(ext == 'docx'){
+
+                   photo =  `<a href="${data.photo}" target="blank">
+                                <i class="fas fa-file-word"></i>
+                            </a>`;
+
+               }else{
+                   photo =  `<img src="${data.photo}" >`;
+               }
             }else{
                 photo = '';
             }
@@ -154,7 +235,7 @@ $('.data').submit(function(e){
         $('.push-notification').animate({
             right: '10px'
         },1500 , function(){
-            $(this).animate({
+            $(this).delay(2000).animate({
                 right:'-205px'
             })
         });

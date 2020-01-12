@@ -17509,3 +17509,11 @@ body {
   margin-top: 25px;
 }
 
+.fa-file-word,
+.fa-file-pdf {
+  text-align: center;
+  display: block;
+  font-size: 50px;
+  color: black;
+}
+

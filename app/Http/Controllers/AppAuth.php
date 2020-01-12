@@ -22,10 +22,8 @@ class AppAuth extends Controller
 
         $users = user::where([['id'  , '!=',auth()->user()->id] , ['status' , 1]])->get();
       
-
-       
-
         return view('home' ,\compact('users'));
+
     }
     public function logOut(){
 
@@ -40,29 +38,45 @@ class AppAuth extends Controller
     public function chat(Request $request){
 
         $status = user::where('username' , $request->username)->select('status')->get();
+
         $user = user::where('username' , $request->username)->pluck('id');
+
         $channel_token =  auth()->user()->id + $user[0];
+
         $rec = $request->username;
+
         $reciever_id = $user[0];
+
         $messages = message::where('chat_token' , $channel_token)->get();
+
         if($status[0]->status == 1){
+
             return view('chat' , \compact('channel_token' , 'rec' , 'messages' , 'reciever_id'));
+
         }else{
+
             return \redirect()->back()->with('error' , 'this user is currently offline please check back later');
+            
         }
     }
 
     public function sendMessage(Request $request){
         $token = $request->token;
+
         $msg = $request->message;
+
         $message = $msg != '' ? $msg :'no msg';
+
         $file = $request->file;
+
         $reciever = $token - auth()->user()->id;
+
         $Name = 'no photo';
 
-        $extensions = ['jpg' , 'png' , 'jpeg' , 'gif' , 'docs' , 'pdf'];
+        $extensions = ['jpg' , 'png' , 'jpeg' , 'gif' , 'pdf' , 'docx'];
 
         if($request->has('file')){
+
             $file = $request->file;
     
             $imageExt = $file->getClientOriginalExtension();
@@ -80,10 +94,19 @@ class AppAuth extends Controller
             endif;
 
                //store data 
+               $path = '';
+            if($imageExt == 'pdf' || $imageExt == 'docx'):
 
-            $file->storeAs('public/uploads' , $newName);
+                $file->storeAs('public/uploads/documents' , $newName);
+                $path = '/storage/uploads/documents/';
+            else:
 
-            $Name = '/storage/uploads/'.$newName;
+                $file->storeAs('public/uploads/images' , $newName);
+                $path = '/storage/uploads/images/';
+
+            endif;
+
+            $Name = $path.$newName;
 
         }
 
@@ -103,6 +126,7 @@ class AppAuth extends Controller
     }
 
     public function getActiveUsers(Request $request){
+
         $Auth_id = $request->id;
 
         $users = user::where([['id'  , '!=', $Auth_id] , ['status' , 1]])->pluck('username');

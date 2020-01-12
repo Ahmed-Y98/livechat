@@ -63,7 +63,6 @@ $(function(){
        });
     })
     .catch(err => console.error(err));
-    $.playSound("/songs/just-saying.mp3");
     });
 
     //new message from a user to you
@@ -81,9 +80,9 @@ $(function(){
 
         right: '10px'
    },1500 , function(){
-        $(this).animate({
-            right:'-205px'
-        })
+    $(this).delay(2000).animate({
+                right:'-205px'
+            })
     
 });
 $.playSound("/songs/just-saying.mp3");

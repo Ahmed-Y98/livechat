@@ -35,8 +35,6 @@ class index extends Controller
             
             event(new userIsOnline(auth()->user()->username , auth()->user()->id));
 
-
-
             return redirect()->route('home');
 
         }
@@ -46,6 +44,7 @@ class index extends Controller
     }
 
     public function register(){
+        
         return view('register');
     }
 
