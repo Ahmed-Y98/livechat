@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "chat-app-775a8",
+  "private_key_id": "8da3c4fc674c3b6b002c70464105ee526cb28428",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDKuZq0FEIcvX7N\nEMxVvjuDWwfeLYVCr5CbSiAWqUzROIxtQgEGIUB/5TRyDFFQ7F1jE85GulAMUOEP\nLr61wC1W9wMFlCKNFJiPx/EJLUiZIwCEG6LyBHVmJ9NtlTCH+AQR7jjHXPErflsb\nAhb72uE9xrFQv1qlM7cGERxNeLSPzzEbZNsREYTsyIL0EWVzOhIPuz/wt7/qGCo0\nG564GNImkY8D1QvFL0Es9K9c/9EaIJ2EOLMKkgJt6vNvVdAzBmEA5wSsqgPSnE0S\nKNvciGACH1wa32IbaMWSbCLo9KvOYfAqqqhJW4SvPjB4jA5cgUxsb/f/Cao97q29\nt+3XVNXnAgMBAAECggEAV3QaOPVEUAGvYeeNPrACHHh4vHAGvO3gBB3GGgCPEvLC\nIaAHsQ1HNeU66rhFnBNbdhJlOj3Fqop5jIMt4lo1NP76Xr246gOojN5ELSFL4EQp\nRNRnRuCFhLxJiUyC0yU7HEEYXWjK4WhxBQWxxJR39p5wf9UM1ZeprQRUoVchDage\nOZmCkNR05Rk9m5CBpBm1IZFfgqxWA4P3tHTqEBdtxBgK1vXYg7r0c2qH6dCeiwaP\n0nV40aOnvO9oIa5D4IQq5dCRsy5g789wo8zOzuQbvGsn36D3xQBzwliZ+IMUxDf9\nUSEzq3JrRGHp32hqfSM2Up9nn05SKuK2et+spKhrAQKBgQD/srinU0GaovTlmKsM\nWc8OibrIseA2QF2tc9CQB1DYdpqRToKWokhfpXu2LwnMKRog+9tYRB2Z/Hg7aSB/\nV4O8fEgrDklhN7HdDSAPf+H5k47gu0Y8OJ3jZqYwEEw0IqVDQrcaatQENnPLh3Cs\nedS0H7b5NxF5ZSODHABfOOjq/wKBgQDK9t+GFWZkVZQiKrzdnwm3gU6Lov2P5OSw\nr6mtJGFrv0Tx+2/fY+u7lfg4BHLUKC2BYHmmDCxRjAqBZTDGOE3yzoysF8jpCEul\nmGYTiT8BcmnnyiYMMDpcRzAtgw/KVIy078nJJ6NB97rDY/mJPffmey09YVeB5TV+\nrthgXQkdGQKBgBxUU8sOGV2lolZxxLm4lY05yz0DICFCnl5iT4A1n0psUZG5zhQc\nZMJcFknICmDZSPDQlqu/2DvAUh3a9uPE8W6HooNKsOyZfBZOpvewpnu9Un4poY14\nhF22eMEofRjlocPC94Bwx46z7b5mAiDJ2rweK2qPJFt7ziRvjMcACiZHAoGBAJ+n\nUmzGqKSELOIzfB1Y3Ovca0ysCYkHJF1X0MDBvWBkNHeksXunvebxMS/fT/RTJnh+\nyzIyoSoEXr8qOhOydp5om39DtmaYf+ji2GjFrSoWNfh+qy8rQL0VwnAKiIE/wO8T\nMEdrRqC9ncvU+JVciYRjoFKIH62t/0aHgu1KQcEBAoGAHDcGtmMRdwUIgXJ4uPq9\ncvUaHbjx1PX2s1qqGWYx6FZZq66vekfxs+VNe7exCk6P5chtctcVxcYl0U/dhPSV\ncJW1duAP24Y/+ig+wu+SgcfKN2W5veS7Emqi93xTxS+DHzuJyuUbssXajACq2O53\nm3vpvPHm3FvAcefwyidtCbw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "chat-app-775a8@appspot.gserviceaccount.com",
+  "client_id": "112202995872411035489",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/chat-app-775a8%40appspot.gserviceaccount.com"
+}

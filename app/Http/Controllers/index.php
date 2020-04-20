@@ -50,7 +50,7 @@ class index extends Controller
 
     public function addUser(Request $request){
       $data =  $request->validate([
-                'username' => 'required',
+                'username' => 'required|unique:users',
                 'password' => 'required|min:8|confirmed',
             ]);
 

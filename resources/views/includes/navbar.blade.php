@@ -15,6 +15,9 @@
                 </li>
             @endguest
             @auth
+            <li class="nav-item mt-1">
+                <a class="nav-link"><i class="fas fa-bell"></i></a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link log" href="/logout">logout</a>
             </li>

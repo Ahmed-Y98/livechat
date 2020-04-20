@@ -8,14 +8,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
+    @include('includes.navbar')
     <div id="app">
-
-        @include('includes.navbar')
-        
         @yield('content')
         
     </div>
     <script src="{{asset('js/app.js')}}"></script>
-   
 </body>
 </html>

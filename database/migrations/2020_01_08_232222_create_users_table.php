@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('username');
             $table->string('password');
             $table->unsignedInteger('status')->default(0);
+            $table->string('friends')->default('no friends');
             $table->timestamps();
         });
     }

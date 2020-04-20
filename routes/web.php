@@ -32,6 +32,18 @@ Route::post('/message' , 'AppAuth@sendMessage');
 
 Route::post('/api/activeusers' , 'AppAuth@getActiveUsers')->name('activeUsers');
 
+Route::post('/api/chat' , 'AppAuth@getChat');
+
+Route::post('/api/adduser' , 'AppAuth@addFriend');
+
+Route::post('/api/users' , 'AppAuth@getAvailableUsers');
+
+Route::post('/getnotifications' , 'AppAuth@getNotifications');
+
+Route::post('/api/newnotification' , 'AppAuth@newNotification');
+
+
+
 Route::get('/event', function () {
     event(new newUserRegisterd('ahmed'));
     return 'ok';

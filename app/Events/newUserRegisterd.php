@@ -51,7 +51,7 @@ class newUserRegisterd implements ShouldBroadcast
 
     public function broadcastWith(){
         return [
-            'message' => $this->msg,
+            'body' => $this->msg,
             'username' => $this->user,
             'sender' => $this->id,
             'photo' => $this->photo
